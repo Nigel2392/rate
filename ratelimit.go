@@ -5,7 +5,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/Nigel2392/go-django/src/core/cache"
+	"github.com/Nigel2392/cache"
+	"github.com/Nigel2392/rate/internal"
 )
 
 const (
@@ -67,7 +68,7 @@ func (l *Limit[W, B, DATA]) newKey(prefix []string, data DATA) (string, error) {
 }
 
 func (l *Limit[W, B, DATA]) checkWithPrefix(ctx context.Context, prefix []string, data DATA) error {
-	if !isZero(l.Whitelist) {
+	if !internal.IsZero(l.Whitelist) {
 		whitelisted, err := l.Whitelist.Match(ctx, data)
 		if err != nil {
 			return err
@@ -77,7 +78,7 @@ func (l *Limit[W, B, DATA]) checkWithPrefix(ctx context.Context, prefix []string
 		}
 	}
 
-	if !isZero(l.Blacklist) {
+	if !internal.IsZero(l.Blacklist) {
 		blacklisted, err := l.Blacklist.Match(ctx, data)
 		if err != nil {
 			return err

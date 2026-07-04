@@ -92,7 +92,7 @@ import (
     "time"
 
     "github.com/Nigel2392/rate"
-    "github.com/Nigel2392/go-django/src/core/cache"
+    "github.com/Nigel2392/cache"
 )
 
 func main() {
@@ -147,7 +147,7 @@ import (
     "time"
 
     "github.com/Nigel2392/rate"
-    "github.com/Nigel2392/go-django/src/core/cache"
+    "github.com/Nigel2392/cache"
 )
 
 func ACLDemo() {
@@ -260,7 +260,7 @@ import (
 
     "github.com/Nigel2392/rate"
     "github.com/Nigel2392/rate/limithttp"
-    "github.com/Nigel2392/go-django/src/core/cache"
+    "github.com/Nigel2392/cache"
 )
 
 func setupRouter() {

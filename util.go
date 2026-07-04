@@ -8,9 +8,6 @@ import (
 	_ "unsafe"
 )
 
-//go:linkname isZero github.com/Nigel2392/go-django/src/internal/django_reflect.IsZero
-func isZero(value interface{}) bool
-
 func appendToMap[K comparable, V any](m map[K][]V, k K, v V) {
 	result, ok := m[k]
 	if ok {
